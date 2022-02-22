@@ -12,18 +12,18 @@ highlighter: shiki
 lineNumbers: false
 # some information about the slides, markdown enabled
 info: |
-  ## Slidev Starter Template
+  ## An introduction to Tailwind CSS
   Presentation slides for developers.
 
-  Learn more at [Sli.dev](https://sli.dev)
+  Learn more at [Tailwindcss.TW](https://tailwindcss.tw/)
 # persist drawings in exports and build
 drawings:
   persist: false
 ---
 
-# Welcome to Slidev
+# Introduction to Tailwind CSS
 
-Presentation slides for developers
+My personal favorite design framework
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -32,116 +32,123 @@ Presentation slides for developers
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
   <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
     class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
 ---
 
-# What is Slidev?
+# What is Tailwind CSS?
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+TailwindCSS is a CSS framework for developers, consist of the following features
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+- 📝 **Utility-first** - CSS packed with classes that can be composed to build any design
+- ⚡ **Performance** - Tiny, never ship unused CSS
+- 📱 **Mobile-first** - Responsive everything
+- 🌟 **State variants** - `hover` and `focus` states? Got ’em
+- ⚛️ **Component-driven** - No need to be worried about duplication
+- 🎨 **Themable** - Now with Dark Mode
+- 🛠 **Customization** - Extend it, tweak it, change it
 
 <br>
 <br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
+Read more about [Tailwind CSS?](https://tailwindcss.tw/)
 
 ---
 
 # Navigation
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+Hover on the bottom-left corner to see the navigation's controls panel
 
 ### Keyboard Shortcuts
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+|                                                       |                             |
+| ----------------------------------------------------- | --------------------------- |
+| <kbd>right</kbd> / <kbd>space</kbd>                   | next animation or slide     |
+| <kbd>left</kbd> / <kbd>shift</kbd> + <kbd>space</kbd> | previous animation or slide |
+| <kbd>up</kbd>                                         | previous slide              |
+| <kbd>down</kbd>                                       | next slide                  |
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
 <img
   v-click
   class="absolute -bottom-9 -left-7 w-80 opacity-50"
   src="https://sli.dev/assets/arrow-bottom-left.svg"
 />
+
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
 
 ---
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
 
-# Code
+# Sizing
 
-Use code snippets and get the highlighting directly![^1]
+<div grid="~ cols-2 gap-4">
+  <div>
 
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
+```html
+<div class="space-y-4">
+  <div class="w-96 bg-white shadow rounded">w-96</div>
+  <div class="w-80 bg-white shadow rounded">w-80</div>
+  <div class="w-72 bg-white shadow rounded">w-72</div>
+  <div class="w-64 bg-white shadow rounded">w-64</div>
+  <div class="w-60 bg-white shadow rounded">w-60</div>
+  <div class="w-56 bg-white shadow rounded">w-56</div>
+  <div class="w-56 bg-white shadow rounded">w-52</div>
+  <div class="w-56 bg-white shadow rounded">w-48</div>
+</div>
 ```
 
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
+</div>
 
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
+<div>
+  <Sizing />
+</div>
+</div>
 
 <style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
+
+</style>
+
+---
+
+# Colors
+
+<div grid="~ cols-2 gap-4">
+  <div>
+
+```html
+<div class="grid grid-cols-10 gap-2">
+  <div class="bg-sky-50 aspect-square"></div>
+  <div class="bg-sky-100 aspect-square"></div>
+  <div class="bg-sky-200 aspect-square"></div>
+  ...
+  <div class="bg-sky-700 aspect-square"></div>
+  <div class="bg-sky-800 aspect-square"></div>
+  <div class="bg-sky-900 aspect-square"></div>
+</div>
+
+<div class="grid grid-cols-10 gap-2">
+  <div class="bg-violet-50 aspect-square"></div>
+  <div class="bg-violet-100 aspect-square"></div>
+  <div class="bg-violet-200 aspect-square"></div>
+  ...
+  <div class="bg-violet-700 aspect-square"></div>
+  <div class="bg-violet-800 aspect-square"></div>
+  <div class="bg-violet-900 aspect-square"></div>
+</div>
+```
+
+</div>
+
+<div>
+  <Colors />
+</div>
+</div>
+
+<style>
+
 </style>
 
 ---
@@ -176,10 +183,9 @@ Check out [the guides](https://sli.dev/builtin/components.html) for more.
 </div>
 </div>
 
+---
 
----
-class: px-20
----
+## class: px-20
 
 # Themes
 
@@ -209,20 +215,15 @@ Read more about [How to use a theme](https://sli.dev/themes/use.html) and
 check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
 
 ---
-preload: false
----
+
+## preload: false
 
 # Animations
 
 Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
 
 ```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
+<div v-motion :initial="{ x: -80 }" :enter="{ x: 0 }">Slidev</div>
 ```
 
 <div class="w-60 relative mt-6">
@@ -295,6 +296,7 @@ LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
 Inline $\sqrt{3x-1}+(1+x)^2$
 
 Block
+
 $$
 \begin{array}{c}
 
@@ -372,10 +374,11 @@ database "MySql" {
 
 [Learn More](https://sli.dev/guide/syntax.html#diagrams)
 
-
 ---
+
 layout: center
 class: text-center
+
 ---
 
 # Learn More

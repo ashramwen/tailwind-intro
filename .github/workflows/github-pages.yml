@@ -44,7 +44,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install and Build
         run: |
-          pnpm
+          pnpm install
           pnpm build
 
       # Runs a set of commands using the runners shell

@@ -153,6 +153,46 @@ Hover on the bottom-left corner to see the navigation's controls panel
 
 ---
 
+# Shadows
+
+<div grid="~ cols-2 gap-4">
+  <div>
+
+```html
+<div class="grid grid-cols-10 gap-2">
+  <div class="bg-sky-50 aspect-square"></div>
+  <div class="bg-sky-100 aspect-square"></div>
+  <div class="bg-sky-200 aspect-square"></div>
+  ...
+  <div class="bg-sky-700 aspect-square"></div>
+  <div class="bg-sky-800 aspect-square"></div>
+  <div class="bg-sky-900 aspect-square"></div>
+</div>
+
+<div class="grid grid-cols-10 gap-2">
+  <div class="bg-violet-50 aspect-square"></div>
+  <div class="bg-violet-100 aspect-square"></div>
+  <div class="bg-violet-200 aspect-square"></div>
+  ...
+  <div class="bg-violet-700 aspect-square"></div>
+  <div class="bg-violet-800 aspect-square"></div>
+  <div class="bg-violet-900 aspect-square"></div>
+</div>
+```
+
+</div>
+
+<div>
+  <Colors />
+</div>
+</div>
+
+<style>
+
+</style>
+
+---
+
 # Components
 
 <div grid="~ cols-2 gap-4">

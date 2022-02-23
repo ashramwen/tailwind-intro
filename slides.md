@@ -32,30 +32,11 @@ My personal favorite design framework
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
+  <a href="https://github.com/tailwindlabs/tailwindcss" target="_blank" alt="GitHub"
     class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
 </div>
-
----
-
-# What is Tailwind CSS?
-
-TailwindCSS is a CSS framework for developers, consist of the following features
-
-- 📝 **Utility-first** - CSS packed with classes that can be composed to build any design
-- ⚡ **Performance** - Tiny, never ship unused CSS
-- 📱 **Mobile-first** - Responsive everything
-- 🌟 **State variants** - `hover` and `focus` states? Got ’em
-- ⚛️ **Component-driven** - No need to be worried about duplication
-- 🎨 **Themable** - Now with Dark Mode
-- 🛠 **Customization** - Extend it, tweak it, change it
-
-<br>
-<br>
-
-Read more about [Tailwind CSS?](https://tailwindcss.tw/)
 
 ---
 
@@ -82,6 +63,25 @@ Hover on the bottom-left corner to see the navigation's controls panel
 
 ---
 
+# What is Tailwind CSS?
+
+TailwindCSS is a CSS framework for developers, consist of the following features
+
+- 📝 **Utility-first** - CSS packed with classes that can be composed to build any design
+- ⚡ **Performance** - Tiny, never ship unused CSS
+- 📱 **Responsive Design** - Adapt to any screen size using responsive modifiers
+- 🌟 **State variants** - `hover`, `focus`, and other states? Got ’em
+- ⚛️ **Reusing styles** - No need to be worried about duplication
+- 🎨 **Themable** - Now with Dark Mode
+- 🛠 **Customization** - Extend it, tweak it, change it
+
+<br>
+<br>
+
+Read more about [Tailwind CSS](https://tailwindcss.tw/)
+
+---
+
 # Sizing
 
 <div grid="~ cols-2 gap-4">
@@ -95,8 +95,8 @@ Hover on the bottom-left corner to see the navigation's controls panel
   <div class="w-64 bg-white shadow rounded">w-64</div>
   <div class="w-60 bg-white shadow rounded">w-60</div>
   <div class="w-56 bg-white shadow rounded">w-56</div>
-  <div class="w-56 bg-white shadow rounded">w-52</div>
-  <div class="w-56 bg-white shadow rounded">w-48</div>
+  <div class="w-52 bg-white shadow rounded">w-52</div>
+  <div class="w-48 bg-white shadow rounded">w-48</div>
 </div>
 ```
 
@@ -159,31 +159,32 @@ Hover on the bottom-left corner to see the navigation's controls panel
   <div>
 
 ```html
-<div class="grid grid-cols-10 gap-2">
-  <div class="bg-sky-50 aspect-square"></div>
-  <div class="bg-sky-100 aspect-square"></div>
-  <div class="bg-sky-200 aspect-square"></div>
-  ...
-  <div class="bg-sky-700 aspect-square"></div>
-  <div class="bg-sky-800 aspect-square"></div>
-  <div class="bg-sky-900 aspect-square"></div>
-</div>
-
-<div class="grid grid-cols-10 gap-2">
-  <div class="bg-violet-50 aspect-square"></div>
-  <div class="bg-violet-100 aspect-square"></div>
-  <div class="bg-violet-200 aspect-square"></div>
-  ...
-  <div class="bg-violet-700 aspect-square"></div>
-  <div class="bg-violet-800 aspect-square"></div>
-  <div class="bg-violet-900 aspect-square"></div>
+<div class="grid grid-cols-2 gap-6">
+  <div class="shadow-sm bg-white rounded-lg">
+    shadow-sm
+  </div>
+  <div class="shadow bg-white rounded-lg">
+    shadow
+  </div>
+  <div class="shadow-md bg-white rounded-lg">
+    shadow-md
+  </div>
+  <div class="shadow-lg bg-white rounded-lg">
+    shadow-lg
+  </div>
+  <div class="shadow-xl bg-white rounded-lg">
+    shadow-xl
+  </div>
+  <div class="shadow-2xl bg-white rounded-lg">
+    shadow-2xl
+  </div>
 </div>
 ```
 
 </div>
 
 <div>
-  <Colors />
+  <Shadows />
 </div>
 </div>
 
@@ -193,234 +194,402 @@ Hover on the bottom-left corner to see the navigation's controls panel
 
 ---
 
-# Components
+# Installation
+
+<div class="text-2xl">
+- Use Tailwind CLI
+
+<div v-click class="text-xl ml-4 text-gray-400">
+
+    - The simplest way
+
+</div>
+
+</div>
+<br/>
+<div class="text-2xl">
+- PostCSS plugin
+
+<div v-click class="text-xl ml-4 text-gray-400">
+
+    - Integrating it with build tools
+
+</div>
+<br/>
+</div>
+
+<div class="text-2xl">
+- With frameworks
+
+<div v-click class="text-xl ml-4 text-gray-400">
+
+    - Supporting a number of popular frameworks
+
+</div>
+<br/>
+</div>
+
+<div class="text-2xl">
+- Use CDN
+
+<div v-click class="text-xl ml-4 text-gray-400">
+
+    - Trying Tailwind right in the browser without any build step
+
+</div>
+
+</div>
+
+<br>
+<br>
+
+<div v-click>
+
+[Learn more](https://tailwindcss.tw/docs/installation)
+
+</div>
+
+---
+
+# Tailwind CLI
+The simplest and fastest way to run with Tailwind CSS
+
+<v-click>
+
+```sh
+> npm install -D tailwindcss
+> npx tailwindcss init
+```
+
+</v-click>
+
+<v-click>
+
+```js {all|3}
+// tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+</v-click>
+
+<v-click>
+
+```css
+/* input.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+</v-click>
+
+<v-click>
+
+```sh
+> npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+```
+
+</v-click>
+
+
+---
+
+# PostCSS
+integrate it with build tools like webpack, Rollup, Vite, and Parcel
 
 <div grid="~ cols-2 gap-4">
+
 <div>
+<v-click>
 
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
+```sh
+> npm install -D tailwindcss postcss autoprefixer
+> npx tailwindcss init
 ```
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
+</v-click>
 
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
+<v-click>
 
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
----
-
-## class: px-20
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-
-## preload: false
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div v-motion :initial="{ x: -80 }" :enter="{ x: 0 }">Slidev</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
+```js
+// postcss.config.js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
   }
 }
-</script>
+```
 
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
+</v-click>
 
-[Learn More](https://sli.dev/guide/animations.html#motion)
+<v-click>
 
+```js {all|3}
+// tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+</v-click>
+
+</div>
+<div>
+
+<v-click>
+
+```css
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+</v-click>
+
+<v-click>
+
+```sh
+> npm run dev
+```
+
+</v-click>
+
+</div>
 </div>
 
 ---
 
-# LaTeX
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+# Frameworks support
+
+<img src="/framework.png" alt="" />
+
+---
+
+# CDN
+
+Use the Play CDN to try Tailwind right in the browser without any build step.
+
+The Play CDN is designed for development purposes only, and is not the best choice for production.
+
+```html {all|6,9-11}
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+</body>
+</html>
+```
+
+---
+
+# Editor support
+
+- [Tailwind CSS IntelliSense for VS Code](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)  (Strongly recommend)
+  - Autocomplete
+  - Linting
+  - Hover preview
+  - Syntax highlighting
+
+- Automatic Class Sorting with Prettier
+
+```sh
+> npm install -D prettier prettier-plugin-tailwindcss
+```
+
+- [WebStorm support](https://www.jetbrains.com/help/webstorm/tailwind-css.html)
+
+- [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
+
+---
+
+# Custom CSS
+
+Use @apply to inline any existing utility classes into your own custom CSS.
+
+```css
+.select2-dropdown {
+  @apply rounded-b-lg shadow-md;
+}
+.select2-search {
+  @apply border border-gray-300 rounded;
+}
+.select2-results__group {
+  @apply text-lg font-bold text-gray-900;
+}
+```
+
+<v-click>
+
+```css
+.foo {
+  color: blue !important;
+}
+
+.bar {
+  @apply foo;
+}
+```
+
+
+[Learn more](https://tailwindcss.com/docs/functions-and-directives)
+
+</v-click>
+
+---
+
+# Handling Hover, Focus, and Other States
+Using utilities to style elements on hover, focus, and more.
+
+<Hover />
+
+```html
+<button class="bg-violet-400
+               hover:bg-violet-600
+               active:bg-violet-900
+               focus:outline-none focus:ring focus:ring-violet-300 ...">
+  Save
+</button>
+```
+
+<br>
+<br>
+
+<v-click>
+
+- **Pseudo-classes**, like `:hover`, `:focus`, `:first-child`, and `:required`
+- **Pseudo-elements**, like `::before`, `::after`, `::placeholder`, and `::selection`
+- **Media queries**, like responsive breakpoints, dark mode, and `prefers-reduced-motion`
+- **Attribute selectors**, like `[dir="rtl"]` and `[open]`
+
+</v-click>
+
+---
+
+# Responsive Design
+By default, Tailwind uses a mobile first breakpoint system
+
+<div>
+
+| Breakpoint prefix      | Minimum width | CSS |
+| ----------- | ----------- | --- |
+| `sm`   | 640px       | `@media (min-width: 640px) { ... }` |
+| `md`   | 768px        | `@media (min-width: 768px) { ... }` |
+| `lg`   | 1024px        | `@media (min-width: 1024px) { ... }` |
+| `xl`   | 1280px        | `@media (min-width: 1280px) { ... }` |
+| `2xl`   | 1536px        | `@media (min-width: 1536px) { ... }` |
+
+</div>
 
 <br>
 
-Inline $\sqrt{3x-1}+(1+x)^2$
+<div v-click>
 
-Block
-
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
+```html
+<!-- Width of 16 by default, 32 on medium screens, and 48 on large screens -->
+<img class="w-16 md:w-32 lg:w-48" src="..." />
 ```
 
 </div>
 
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
 ---
 
+
+# Customize
+
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+```js
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        brown: {
+          50: '#fdf8f6',
+          100: '#f2e8e5',
+          200: '#eaddd7',
+          300: '#e0cec7',
+          400: '#d2bab0',
+          500: '#bfa094',
+          600: '#a18072',
+          700: '#977669',
+          800: '#846358',
+          900: '#43302b',
+        },
+      }
+    },
+  },
+}
+```
+
+</div>
+
+<div>
+
+
+<div v-click>
+
+```js
+module.exports = {
+  theme: {
+    extend: {
+      screens: {
+        sm: '480px',
+        md: '768px',
+        lg: '976px',
+        xl: '1440px',
+      },
+      colors: {
+        'blue': '#1fb6ff',
+        'pink': '#ff49db',
+        'orange': '#ff7849',
+        'green': '#13ce66',
+        'gray-dark': '#273444',
+        'gray': '#8492a6',
+        'gray-light': '#d3dce6',
+      }
+    }
+  }
+}
+```
+
+</div>
+
+</div>
+
+</div>
+
+[Learn more](https://tailwindcss.com/docs/configuration)
+
+---
 layout: center
 class: text-center
 
 ---
 
-# Learn More
+# Q & A
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+[Tailwindcss.TW](https://tailwindcss.tw/) · [Slides](https://ashramwen.github.io/tailwind-intro/) · [community](https://www.facebook.com/groups/840139126924653)
+

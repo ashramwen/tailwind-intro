@@ -474,6 +474,9 @@ Using utilities to style elements on hover, focus, and more.
 <br>
 <br>
 
+<arrow v-click="1" x1="350" y1="130" x2="200" y2="143" color="#38E" width="3" arrowSize="1" />
+<p v-after="1" class="absolute top-28 left-80 opacity-30 transform -rotate-10">Hover and click me!</p>
+
 <v-click>
 
 - **Pseudo-classes**, like `:hover`, `:focus`, `:first-child`, and `:required`

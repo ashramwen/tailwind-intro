@@ -251,127 +251,6 @@ Read more about [Tailwind CSS](https://tailwindcss.tw/)
 
 ---
 
-# Tailwind CLI
-The simplest and fastest way to run with Tailwind CSS
-
-<v-click>
-
-```sh
-> npm install -D tailwindcss
-> npx tailwindcss init
-```
-
-</v-click>
-
-<v-click>
-
-```js {all|3}
-// tailwind.config.js
-module.exports = {
-  content: ["./src/**/*.{html,js}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-</v-click>
-
-<v-click>
-
-```css
-/* input.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-</v-click>
-
-<v-click>
-
-```sh
-> npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
-```
-
-</v-click>
-
-
----
-
-# PostCSS
-integrate it with build tools like webpack, Rollup, Vite, and Parcel
-
-<div grid="~ cols-2 gap-4">
-
-<div>
-<v-click>
-
-```sh
-> npm install -D tailwindcss postcss autoprefixer
-> npx tailwindcss init
-```
-
-</v-click>
-
-<v-click>
-
-```js
-// postcss.config.js
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  }
-}
-```
-
-</v-click>
-
-<v-click>
-
-```js {all|3}
-// tailwind.config.js
-module.exports = {
-  content: ["./src/**/*.{html,js}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-</v-click>
-
-</div>
-<div>
-
-<v-click>
-
-```css
-/* index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-</v-click>
-
-<v-click>
-
-```sh
-> npm run dev
-```
-
-</v-click>
-
-</div>
-</div>
-
----
-
-
 # Frameworks support
 
 <img src="/framework.png" alt="" />
@@ -585,6 +464,16 @@ module.exports = {
 </div>
 
 [Learn more](https://tailwindcss.com/docs/configuration)
+
+---
+
+# Resources
+
+- [Official Tailwind UI](https://tailwindui.com/)
+- [Headless UI](https://headlessui.dev/) (Free)
+- [Tailwind Components](https://tailwindcomponents.com/) (Free)
+- [Hero Patterns](https://heropatterns.com/) (Free)
+- [Playground](https://play.tailwindcss.com/)
 
 ---
 layout: center

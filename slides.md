@@ -303,7 +303,7 @@ The Play CDN is designed for development purposes only, and is not the best choi
 
 # Custom CSS
 
-Use @apply to inline any existing utility classes into your own custom CSS.
+Use `@apply` to inline any existing utility classes into your own custom CSS.
 
 ```css
 .select2-dropdown {

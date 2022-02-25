@@ -469,6 +469,7 @@ module.exports = {
 
 # Resources
 
+- [Official Docs](https://tailwindcss.com/)
 - [Official Tailwind UI](https://tailwindui.com/)
 - [Headless UI](https://headlessui.dev/) (Free)
 - [Tailwind Components](https://tailwindcomponents.com/) (Free)
